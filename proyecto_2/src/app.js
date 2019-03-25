@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Saludar from './components/Saludar';
 import SaludarFunc from './components/SaludarFunc';
+import Contador from './components/Contador'
 
 const App = (props) => {
     return (
@@ -13,6 +14,7 @@ const App = (props) => {
             <Saludar nombre="Quely"/>
             <Saludar />
             <SaludarFunc nombre="Manuee"/>
+            <Contador />
         </div>
         
     );
