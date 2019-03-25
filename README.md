@@ -25,7 +25,9 @@ touch dist/index.html
 touch src/app.js
 ```
 
-Validar las propiedades que recibe un componente se deberá instalar primero la dependencia
+## Validar las propiedades entrada
+
+si se quiere validar las entradas de un compoenete se debe de instalar el siguiente paquete
 
 ```bash
 npm install --save prop-types

@@ -12,7 +12,7 @@ const App = (props) => {
             <Saludar nombre="Tomeu"/>
             <Saludar nombre="Quely"/>
             <Saludar />
-            <SaludarFunc />
+            <SaludarFunc nombre="Manuee"/>
         </div>
         
     );
