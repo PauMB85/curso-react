@@ -11,6 +11,7 @@ const App = (props) => {
             <Saludar nombre="Pau"/>
             <Saludar nombre="Tomeu"/>
             <Saludar nombre="Quely"/>
+            <Saludar />
             <SaludarFunc />
         </div>
         
