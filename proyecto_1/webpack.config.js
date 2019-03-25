@@ -17,6 +17,9 @@ module.exports = {
             }
         ]
     },
+    devServer: {
+        contentBase: outputPath
+    },
     resolve: {
         extensions: ['.js','.jsx']
     }
