@@ -1,5 +1,7 @@
 import React from 'react';
 
+import HijoContador from './HijoContador';
+
 
 /**
  * siempre hay que hacer un super, para obtener la propiedad this
@@ -29,11 +31,8 @@ export default class Contador extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.decrementar}>-</button>
-                <span>{this.state.cuenta}</span>
-                <button onClick={this.incrementar}>+</button>
-            </div>
+            <HijoContador cuenta={this.state.cuenta} onHandlerIncrementar={this.incrementar} onHandlerDecrementar={this.decrementar}/>
+            
         )
     }
 }
