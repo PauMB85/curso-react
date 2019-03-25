@@ -25,3 +25,9 @@ touch dist/index.html
 touch src/app.js
 ```
 
+Validar las propiedades que recibe un componente se deberá instalar primero la dependencia
+
+```bash
+npm install --save prop-types
+```
+

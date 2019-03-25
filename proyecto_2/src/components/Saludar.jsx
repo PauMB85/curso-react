@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Las propiedades no pueden ser cambiadas por el componente (son solo de lectura)... debe ser por los estados.
@@ -12,11 +13,18 @@ export default class Saludar extends React.Component {
             <p>Hola {this.props.nombre}</p>
         )
     }
-}
+};
 
 /**
  * declaración de una propiedad por defecto
  */
 Saludar.defaultProps = {
     nombre: 'Mundo'
+};
+
+/**
+ * Validación de la propiedad de entrada
+ */
+Saludar.propTypes = {
+    nombre: PropTypes.string
 }
