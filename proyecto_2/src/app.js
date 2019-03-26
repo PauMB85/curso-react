@@ -12,7 +12,7 @@ class  App extends React.Component {
         super(props);
         this.state = {
             mascotas: ['perro', 'gato', 'canario'],
-            colorTema:'black'
+            colorTema:'white'
         }
     }
 
