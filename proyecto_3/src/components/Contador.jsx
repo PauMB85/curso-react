@@ -47,11 +47,20 @@ class Contador extends React.Component {
         )
     }
 }
+
+/**
+ * 
+ * @param {*} state aquí se reciben todos los states, por este motivo
+ * solo devolvemos el del contador.
+ */
 const mapStateToProps = (state) => {
     console.log(state);
     return {cuenta: state.contador};
 }
 
+/**
+ * En el objeto mapDispatchToProps se indican las tareas que se quieren utilizar
+ */
 const mapDispatchToProps = {
     incrementar,
     decrementar
