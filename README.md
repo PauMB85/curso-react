@@ -33,3 +33,8 @@ si se quiere validar las entradas de un compoenete se debe de instalar el siguie
 npm install --save prop-types
 ```
 
+## Redux
+
+Es una librería que surge para entender como fluyen los cambios en los datos a través de la app.
+El estado se almacena en un __store__, estos estados son inmutables, si queremos un nuevo estado, lo creamos de nuevo.
+
