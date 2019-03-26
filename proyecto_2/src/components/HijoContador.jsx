@@ -1,13 +1,24 @@
 import React from 'react';
+import {temaContext} from '../contexts';
 
 export default class HijoContador extends React.Component {
+
+    handeClick(event) {
+    }
     render() {
         return(
-            <div>
-                <button onClick={this.props.onHandlerDecrementar}>-</button>
-                <span>{this.props.cuenta}</span>
-                <button onClick={this.props.onHandlerIncrementar}>+</button>
-            </div>
+            <temaContext.Consumer>
+                {
+                    (temaColor) => (
+                        <div style={{backgroundColor: temaColor}}>
+                            <button onClick={() => handleclick('-')}>-</button>
+                            <span>{this.props.cuenta}</span>
+                            <button onClick={() => handleclick('+')}>+</button>
+                        </div>
+                    )
+                }
+            </temaContext.Consumer>
+            
         )
     }
 }

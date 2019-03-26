@@ -9,6 +9,12 @@ import HijoContador from './HijoContador';
  * Los state se comparten con los hijos
  */
 
+ /**
+  * Flujo de datos
+  * Los props arriba a bajo
+  * Los eventos de abjo hacia arriba
+  */
+
 export default class Contador extends React.Component {
     constructor(props) {
         super(props);
@@ -31,8 +37,9 @@ export default class Contador extends React.Component {
 
     render() {
         return (
-            <HijoContador cuenta={this.state.cuenta} onHandlerIncrementar={this.incrementar} onHandlerDecrementar={this.decrementar}/>
-            
+            <HijoContador cuenta={this.state.cuenta} 
+                onHandlerIncrementar={this.incrementar} 
+                onHandlerDecrementar={this.decrementar}/>
         )
     }
 }
