@@ -38,3 +38,13 @@ npm install --save prop-types
 Es una librería que surge para entender como fluyen los cambios en los datos a través de la app.
 El estado se almacena en un __store__, estos estados son inmutables, si queremos un nuevo estado, lo creamos de nuevo.
 
+```bash
+npm install --save redux react-redux
+```
+Redux sigue 3 principios:
+
+* El estado de la aplicación se almacena en un único objeto global inmutable.
+* 
+* 
+
+
