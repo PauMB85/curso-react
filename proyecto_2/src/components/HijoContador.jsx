@@ -18,7 +18,6 @@ export default class HijoContador extends React.Component {
                     )
                 }
             </temaContext.Consumer>
-            
         )
     }
 }

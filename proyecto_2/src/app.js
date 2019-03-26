@@ -23,7 +23,7 @@ class  App extends React.Component {
             <Mascota key={pos} mascota={m} />
         );
         return (
-            <div>
+            <React.Fragment>
                 <h1>Hola Mundo!</h1>
                 <p>Me llamo Pau</p>
                 {cmpMascotas}
@@ -35,7 +35,7 @@ class  App extends React.Component {
                 <Saludar nombre="Quely"/>
                 <Saludar />
                 <SaludarFunc nombre="Manuee"/>
-            </div>
+            </React.Fragment>
             
         );
     }
