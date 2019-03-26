@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { incrementar, decrementar} from '../store/contador/actions';
 
 /**
  * siempre hay que hacer un super, para obtener la propiedad this
@@ -13,17 +14,17 @@ import React from 'react';
   * Los eventos de abjo hacia arriba
   */
 
-export default class Contador extends React.Component {
+class Contador extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             cuenta: 0
         };
-        this.incrementar = this.incrementar.bind(this)
-        this.decrementar = this.decrementar.bind(this)
+        //this.incrementar = this.incrementar.bind(this)
+        //this.decrementar = this.decrementar.bind(this)
     }
 
-    incrementar() {
+    /*incrementar() {
         console.log('incrementar');
         this.setState({cuenta: this.state.cuenta + 1});
     }
@@ -31,18 +32,28 @@ export default class Contador extends React.Component {
     decrementar () {
         console.log('decrementar');
         this.setState({cuenta: this.state.cuenta - 1});
-    }
+    }*/
 
     render() {
         return (
             
             <div >
-                <button onClick={this.decrementar}>-</button>
-                <span>{this.state.cuenta}</span>
-                <button onClick={this.incrementar}>+</button>
+                <button onClick={this.props.decrementar}>-</button>
+                <span>{this.props.cuenta}</span>
+                <button onClick={this.props.incrementar}>+</button>
             </div>
                 
             
         )
     }
 }
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {cuenta: state.contador};
+}
+
+const mapDispatchToProps = {
+    incrementar,
+    decrementar
+}
+export default connect (mapStateToProps, mapDispatchToProps)(Contador);
