@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Tarea from './Tarea';
 
 class ListaTareas extends React.Component {
     render() {
-        const tareas = this.props.tareas.map( t => <li key={t.id}> {t.nombre} : 
-            {t.completada ? 'Hecha' : 'Sin hacer'}</li>);
+        const tareas = this.props.tareas.map( t => <Tarea key={t.id} tarea={t}/>);
         return (
             <dir>
                 {tareas}
