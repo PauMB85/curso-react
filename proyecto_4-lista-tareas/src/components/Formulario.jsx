@@ -9,14 +9,20 @@ class Formulario extends React.Component {
             nombre: ''
         };
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleChange(event) {
         console.dir(event.target.value);
         this.setState({
             [event.target.id]: event.target.value
-        })
+        });
     }
+
+    handleClick() {
+        this.props.addTarea(this.state.nombre);
+    }
+
     render() {
         return (
             <div>
@@ -24,7 +30,7 @@ class Formulario extends React.Component {
                     <label htmlFor="nombre">Tarea:</label>
                     <input type="text" id="nombre" 
                         onChange={this.handleChange} value={this.state.nombre}/>
-                    <button type="button" onClick={this.props.addTarea} >Guardar</button>
+                    <button type="button" onClick={this.handleClick} >Guardar</button>
                 </div>
             </div>
         )
