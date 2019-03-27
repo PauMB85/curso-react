@@ -7,9 +7,7 @@ const initialState = {
     siguienteId: 1
 };
 
-function addTask(state, nombre) {
-
-    const newTask = {id: state.siguienteId, nombre: nombre, completada:false};
+function addTask(state, newTask) {
     const newList = state.lista.concat(newTask);
 
     return Object.assign({}, state, {lista: newList,listaFiltrada: newList,filtro: state.filtro, siguienteId:state.siguienteId+1});
