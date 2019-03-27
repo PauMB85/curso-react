@@ -2,17 +2,46 @@ import * as ACTIONS from './action-types';
 
 const initialState = {
     lista: [{id: 0, nombre: 'Tarea 1', completada: false}],
-    listaFiltrada: [],
+    listaFiltrada: [{id: 0, nombre: 'Tarea 1', completada: false}],
     filtro: '',
     siguienteId: 1
 };
 
 function addTask(state, nombre) {
-    
+
     const newTask = {id: state.siguienteId, nombre: nombre, completada:false};
     const newList = state.lista.concat(newTask);
 
-    return Object.assign({}, state, {lista: newList, siguienteId:state.siguienteId+1});
+    return Object.assign({}, state, {lista: newList,listaFiltrada: newList,filtro: state.filtro, siguienteId:state.siguienteId+1});
+}
+
+function filter(state,texto) {
+    console.log(texto);
+    if(texto.trim()){
+        const nuevaListaFiltrada = state.lista.filter(t => t.nombre.includes(texto));
+        return Object.assign({}, state, {listaFiltrada: nuevaListaFiltrada, filtro: texto.trim()});
+    }else {
+        return Object.assign({}, state, {listaFiltrada: state.lista, filtro: ''});
+    }
+}
+
+function doTask(state, idTarea) {
+    const newList = state.lista.map(t => {
+        if(t.id === idTarea) {
+            return {id:t.id, nombre: t.nombre, completada: !t.completada}
+        }
+        return t;
+    });
+    return Object.assign({}, state, {lista: newList});
+}
+
+function deleteTask(state, idTarea){
+    
+    const newList = state.lista.filter( t => {
+        return t.id !== idTarea;
+    });
+
+    return Object.assign({}, state, {lista: newList});
 }
 
 export default function tareas (state = initialState, action) {
@@ -20,11 +49,11 @@ export default function tareas (state = initialState, action) {
         case ACTIONS.ADD:
             return addTask(state,action.payload);
         case ACTIONS.DEL:
-            return state;
+            return deleteTask(state, action.payload);
         case ACTIONS.DO:
-            return state;
+            return doTask(state, action.payload);
         case ACTIONS.FILTER:
-            return state;
+            return filter(state,action.payload);
         default:
             return state;
     }

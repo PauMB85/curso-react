@@ -14,7 +14,7 @@ class ListaTareas extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {tareas: state.tareas.lista};
+    return {tareas: state.tareas.listaFiltrada};
 }
 
 export default connect(mapStateToProps)(ListaTareas);
